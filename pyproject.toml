@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "file-organizer"
+version = "0.1.0"
+authors = [
+    { name = "袁首京", email = "yuanshoujing@gmail.com" },
+]
+description = "文件整理器"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = ["click", "tqdm"]
+
+[project.optional-dependencies]
+build = ["setuptools", "build", "twine"]
+test = ["pytest"]
+
+[tool.pyright]
+venvPath = ".venv"
