@@ -14,13 +14,14 @@ def test_walk():
 
 
 def test_organize():
-    organize(
-        "/Volumes/opt/Docs",
-        [".jpg", ".jpeg", ".png", ".gif"],
-        "/Volumes/opt/Images",
-        strategy="later",
-    )
+    # organize(
+        # "/Volumes/opt/Docs",
+        # [".jpg", ".jpeg", ".png", ".gif"],
+        # "/Volumes/opt/Images",
+        # strategy="later",
+    # )
     # organize("/Volumes/opt/Docs", [".doc", ".docx"], "/Volumes/opt/wordocs")
     # organize(
     # "/Volumes/opt/wordocs", [".doc", ".docx"], "/Users/rocker/ddd", strategy="later"
     # )
+    organize("e:\\dev_docs", ".doc .docx", "e:/ttttt/docs")
