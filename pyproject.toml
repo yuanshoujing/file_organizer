@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools >= 40.9.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -16,10 +16,12 @@ classifiers = [
 dependencies = ["loguru", "click", "tqdm"]
 
 [project.optional-dependencies]
-build = ["setuptools", "build", "twine", "pyinstaller"]
 test = ["pytest"]
+build = ["setuptools", "build", "twine"]
+pack = ["pyinstaller"]
 
 [tool.pyright]
 exclude = [".venv"]
+pythonVersion = "3.11"
 venvPath = '.'
 venv = '.venv'
