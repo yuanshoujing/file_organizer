@@ -2,6 +2,8 @@
 # -*- coding=utf-8 -*-
 
 import click
+from loguru import logger
+
 from file_organizer import organize
 
 
@@ -29,8 +31,14 @@ from file_organizer import organize
     help="目标路径中存在同名文件时如何处理。later 保留最新的；bigger 保留最大的；both 两个都保留",
 )
 def cui(src, exts, dst, move, strategy):
-    organize(src, exts, dst, move, strategy)
+    t = True
+    if move:
+        t = False
+    organize(src, exts, dst, t, strategy)
 
 
 if __name__ == "__main__":
+    import sys
+
+    logger.configure(handlers=[dict(sink=sys.stdout, format="--> {message}")])
     cui()

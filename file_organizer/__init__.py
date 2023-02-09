@@ -1,7 +1,7 @@
 import shutil
 
 from loguru import logger
-from os import walk
+from os import walk, listdir
 from pathlib import Path
 from filecmp import cmp
 
@@ -56,5 +56,5 @@ def organize(src: str, exts: str, dst: str, copy: bool = True, strategy: str = "
             target = dst_path / Path(name)
             deal(file, target, copy, strategy)
 
-    if not copy:
+    if not copy and len(listdir(src_path)) < 1:
         src_path.rmdir()
