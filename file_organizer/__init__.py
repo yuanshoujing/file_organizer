@@ -54,7 +54,10 @@ def organize(src: str, exts: str, dst: str, copy: bool = True, strategy: str = "
                 continue
 
             target = dst_path / Path(name)
-            deal(file, target, copy, strategy)
+            try:
+                deal(file, target, copy, strategy)
+            except Exception as e:
+                pass
 
     if not copy and len(listdir(src_path)) < 1:
         src_path.rmdir()
